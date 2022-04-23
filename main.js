@@ -1,2 +1,5 @@
-let userAnswer =  prompt("enter a word","your name")
-alert(userAnswer)
+let userAge= prompt("enter your age")
+let userName= prompt("enter your name")
+let userSex= prompt("enter your sex")
+let userAgeNumber=Number(userAge)
+alert(userAgeNumber + ' ' +userName  + ' ' + userSex)
