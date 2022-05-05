@@ -95,6 +95,93 @@ function factorialR(n) {
 // if number => non-negative
 if (userInput > 0) {
     let result = factorialR(userInput);
+    
+    
+    //====================================== End of Loops task====================================================
+    
+    
+    //====================================== Start of Function task====================================================
+    
+    function randomNumbers(start, end) {
+  return Math.floor(Math.random() * (start - end + 1)) + end;
+}
+
+array = [];
+for (let index = 0; index < 5; index++) {
+  array.push(randomNumbers(15, 50));
+}
+console.log(array);
+
+function customFilter(arr, f) {
+  let result = [];
+  for (let index = 0; index < arr.length; index++) {
+    if (f(arr[index])) {
+      result.push(arr[index]);
+    }
+  }
+
+  return result;
+}
+
+console.log(
+  customFilter(array, function (x) {
+    return x > 30;
+  })
+);
+
+// =========test customFilter=======
+
+const arrs = [1, 2, 3];
+const newArr1 = customFilter(arrs, function (x) {
+  return x > 2;
+});
+console.log("==== test customFilter ====");
+console.log(newArr1); // [3]
+
+function costumMap(arr, f) {
+  const resultMap = [];
+  for (let index = 0; index < arr.length; index++) {
+    resultMap.push(f(arr[index]));
+  }
+  return resultMap;
+}
+let qwe = costumMap(array, function (x) {
+  return x * 2;
+});
+console.log(qwe);
+
+//=======test customMap===
+
+const arr2 = [1, 2, 3];
+const newArr2 = costumMap(arr2, function (x) {
+  return x * 2;
+});
+console.log(" ==== test customMap ====");
+console.log(newArr2); // [2, 4, 6]
+
+function costumReduce(arr, f) {
+  let accumalator = 0;
+  for (let index = 0; index < arr.length; index++) {
+    accumalator += f(arr[index]);
+  }
+  return accumalator;
+}
+console.log(
+  costumReduce(array, function (x) {
+    return x;
+  })
+);
+
+// ====test customRedus===========
+const arr3 = [1, 2, 3];
+const result1 = costumReduce(arr3, function (x) {
+  return x;
+});
+console.log("====test customReduse ====");
+console.log(result1); // 6
+
+    
+    //====================================== End of Loops task====================================================
   alert(`The factorial recurive of is ${result}`);
 }
 //====================================== End of Loops task====================================================
